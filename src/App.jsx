@@ -1,14 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import {Fragment, useState } from 'react'
+
+import Background from './components/background/background.component'
 
 function App() {
  
 
   return (
-    <div >
-      HEre is the main page
-    </div>
+    <Fragment>
+      <Background>
+
+      </Background>
+      
+    </Fragment>
   )
 }
 
