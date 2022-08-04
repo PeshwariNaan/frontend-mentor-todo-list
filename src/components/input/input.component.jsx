@@ -9,26 +9,43 @@ import {
 } from './input.styles';
 
 const TaskInput = () => {
+  const [task, setTask] = useState('');
 
-  const [task, setTask] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const id = nanoid();
+    task.trim();
+     if(task === '') return;
 
+     
 
-  const handleChange = (e) => {
-    setTask(e.target.value)
-    console.log(task)
   }
 
+  const clearInput = () => {
+    setTask('')
+  }
+
+  const handleChange = (e) => {
+    setTask(e.target.value);
+    console.log(task);
+  };
+
   return (
+    <form onSubmit={handleSubmit}>
     <InputContainer>
       <CircleContainer>
-      <ClearTextCircle></ClearTextCircle>
+        <ClearTextCircle onClick={clearInput}></ClearTextCircle>
       </CircleContainer>
-      <StyledInput 
-      type='text' 
-      placeholder=" Create a new todo..." 
-      onChange={handleChange} 
-      value={task} />
+      
+        <StyledInput
+          type="text"
+          placeholder=" Create a new todo..."
+          onChange={handleChange}
+          value={task}
+        />
+    
     </InputContainer>
+    </form>
   );
 };
 
