@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { BackgroundContainer, BackgroundImage } from './background.styles';
+import { BackgroundContainer} from './background.styles';
 import BgDarkDesktop from '../../assets/bg-desktop-dark.jpg'
 import BgDarkMobile from '../../assets/bg-mobile-dark.jpg'
 import BgLightDesktop from '../../assets/bg-desktop-light.jpg'
@@ -10,12 +10,11 @@ const Background = () => {
     const theme = useContext(ThemeContext)
     const darkMode = theme.state.darkMode;
   return  ( 
-  <BackgroundContainer>
-    <BackgroundImage src={BgDarkDesktop} alt='background image'/>
+  <BackgroundContainer isDark={darkMode}>
+   
   </BackgroundContainer>
   
   )
 };
 
 export default Background;
-//src\assets\bg-desktop-dark.jpg

@@ -1,15 +1,15 @@
 import { useReducer, createContext } from 'react';
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({});
 
 //Defining action types for the reducer
-actiontypes = {
+export const actiontypes = {
   LIGHTMODE: 'LIGHTMODE',
   DARKMODE: 'DARKMODE',
 };
 
 //initial state for the reducer
-const initialState = { darkMode: false };
+const initialState = { darkMode: true };
 
 // This is a simple change of state a reducer is not neccessary but I'll use one for the practice
 const themeReducer = (state, action) => {
@@ -26,5 +26,5 @@ const themeReducer = (state, action) => {
 export const ThemeProvider = (props) => {
     const [state, dispatch] = useReducer(themeReducer, initialState)
 
-    return <ThemeContext.Provider value={{state: state, dispatch: dispatch}}>{children}</ThemeContext.Provider>
+    return <ThemeContext.Provider value={{state: state, dispatch: dispatch}}>{props.children}</ThemeContext.Provider>
 }

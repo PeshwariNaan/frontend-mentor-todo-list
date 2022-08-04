@@ -1,18 +1,16 @@
-import {Fragment, useState } from 'react'
-
-import Background from './components/background/background.component'
+import { Fragment, useState } from 'react';
+import Background from './components/background/background.component';
+import Layout from './components/layout/layout.component';
+import Header from './components/header/header.component';
 
 function App() {
- 
-
   return (
-    <Fragment>
-      <Background>
-
-      </Background>
+    <>
+    <Layout />
+    <Background />
       
-    </Fragment>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
