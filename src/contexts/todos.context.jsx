@@ -1,4 +1,4 @@
-import { useReducer, createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 
 export const TodoContext = createContext([]);
 
@@ -15,6 +15,7 @@ export const ToDoProvider = ({children}) => {
 
     useEffect(() => {
         localStorage.setItem('todos', JSON.stringify(todos))
+        console.log(todos)
     }, [todos])
 
     return (
