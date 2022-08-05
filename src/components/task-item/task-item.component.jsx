@@ -7,9 +7,10 @@ import {
   DeleteContainer,
 } from './task-item.styles';
 
-const TaskItem = ({id, task, isDone }) => {
+const TaskItem = ({todo }) => {
+  const {id, task} = todo;
   return (
-    <TaskContainer id={id}>
+    <TaskContainer key={id}>
       <CheckboxContainer>
         <Circle></Circle>
       </CheckboxContainer>

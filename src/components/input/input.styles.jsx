@@ -20,7 +20,6 @@ export const StyledInput = styled.input`
   background-color: #333;
   border-style: none;
   padding-left: 2rem;
-
   
 `;
 
@@ -40,5 +39,4 @@ export const ClearTextCircle = styled.div`
   border-radius: 100%;
   border: 2px solid #444;
   color: white;
-  padding: auto 0;
 `;

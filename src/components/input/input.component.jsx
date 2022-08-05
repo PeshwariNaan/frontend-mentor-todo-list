@@ -20,7 +20,7 @@ const TaskInput = () => {
     if (task === '') return;
 
     setTodos([...todos, { id: id, task: task, isDone: false }]);
-    setTask('');
+    setTask('');    
   };
 
   const clearInput = () => {
@@ -40,7 +40,7 @@ const TaskInput = () => {
 
         <StyledInput
           type="text"
-          placeholder=" Create a new todo..."
+          placeholder="Create a new todo..."
           onChange={handleChange}
           value={task}
         />
