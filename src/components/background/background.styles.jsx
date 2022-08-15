@@ -12,7 +12,7 @@ export const BackgroundContainer = styled.div`
     z-index: -1;
     position: absolute;
     background: ${props => props.isDark? `url(${BgDarkDesktop})`: `url(${BgLightDesktop})`} no-repeat;
-    background-size: contain;
+    background-size: 100vw;
     background-color: ${props => props.isDark? 'black': 'white'};
 `
 

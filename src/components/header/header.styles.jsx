@@ -1,17 +1,13 @@
 import styled from 'styled-components';
-import { ReactComponent as Sun } from '../../assets/icon-sun.svg';
-import { ReactComponent as Moon } from '../../assets/icon-moon.svg';
+
 
 export const HeaderContainer = styled.div`
   display: flex;
-  //position: absolute;
-  margin: 15rem auto 0 auto;
+  margin: 15rem 30% 0 30%;
   width: 45rem;
   height: 8rem;
   justify-content: space-between;
   align-items: center;
-
-  z-index: 100;
 `;
 
 export const Title = styled.h1`

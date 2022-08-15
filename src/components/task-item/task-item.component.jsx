@@ -1,4 +1,7 @@
-import React from 'react';
+import { useContext } from 'react';
+import { ReactComponent as Cross } from '../../assets/icon-cross.svg';
+import { ThemeContext } from '../../contexts/theme.context';
+import { TodoContext } from '../../contexts/todos.context';
 import {
   TaskContainer,
   CheckboxContainer,
@@ -7,15 +10,21 @@ import {
   DeleteContainer,
 } from './task-item.styles';
 
-const TaskItem = ({todo }) => {
-  const {id, task} = todo;
+const TaskItem = ({ todo }) => {
+  const theme = useContext(ThemeContext);
+  const { toggleIsDone, deleteTodo } = useContext(TodoContext);
+  const darkMode = theme.state.darkMode;
+  const { id, task, isDone } = todo;
+
   return (
-    <TaskContainer key={id}>
+    <TaskContainer isDark={darkMode} key={id}>
       <CheckboxContainer>
-        <Circle></Circle>
+        <Circle isDark={darkMode} onClick={() => toggleIsDone(id)}></Circle>
       </CheckboxContainer>
-      <TaskText>{task}</TaskText>
-      <DeleteContainer></DeleteContainer>
+      <TaskText isDone={isDone} isDark={darkMode}>{task}</TaskText>
+      <DeleteContainer>
+        <Cross onClick={() => deleteTodo(id)} />
+      </DeleteContainer>
     </TaskContainer>
   );
 };

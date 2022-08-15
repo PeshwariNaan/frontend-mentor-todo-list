@@ -1,21 +1,42 @@
-import React, { useContext } from 'react'
-import TaskItem from '../task-item/task-item.component'
-import {TodoContext} from '../../contexts/todos.context'
-import {ListContainer} from './task-list.styles'
+import React, { useContext, useState, useEffect } from 'react';
+import TaskItem from '../task-item/task-item.component';
+import { TodoContext } from '../../contexts/todos.context';
+import { ThemeContext } from '../../contexts/theme.context'
+import { ListContainer, NoticeText, NoticeContainer } from './task-list.styles';
+//import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
-
-const TaskList = () => {
-    const { todos } = useContext(TodoContext)
+const TaskList = ({ todoList, filter }) => {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode
+  const [notice, setNotice] = useState('');
+  const emptyListNotice = (filter) => {
+    if (filter === 'All') {
+      setNotice('You have no todos!');
+    }
+    if (filter === 'Active') {
+      setNotice('You have no active todos');
+    }
+    if (filter === 'Completed') {
+      setNotice('You have no completed todos! You better get back to work.');
+    }
+  };
+  useEffect(() => {
+    emptyListNotice(filter);
+  }, [filter]);
 
   return (
-    <ListContainer>
-      
-      {todos.map((todo) => {
-        return <TaskItem key={todo.id} todo={todo} />;
-      })}
-     
-    </ListContainer>
-  )
-}
+    <>
+    {todoList.length > 0 ? (
 
-export default TaskList
+    <ListContainer isDark={darkMode}>      
+        {todoList.map((todo) => {
+          return <TaskItem key={todo.id} todo={todo} id={todo.id} />;
+        })}
+    </ListContainer> ) : (
+      <NoticeText isDark={darkMode}>{notice}</NoticeText>
+    )}    
+    </>
+  );
+};
+
+export default TaskList;

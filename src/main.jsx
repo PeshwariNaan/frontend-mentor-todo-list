@@ -6,11 +6,11 @@ import { ThemeProvider } from './contexts/theme.context';
 import { ToDoProvider } from './contexts/todos.context';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ThemeProvider>
       <ToDoProvider>
         <App />
       </ToDoProvider>
     </ThemeProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

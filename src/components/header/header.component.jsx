@@ -12,7 +12,6 @@ const Header = (props) => {
   
   
   const toggleThemeHandler = () => {
-      console.log('clicked')
       if(darkMode) {
         theme.dispatch({type: actiontypes.LIGHTMODE})
       }else {

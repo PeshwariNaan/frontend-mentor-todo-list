@@ -10,7 +10,7 @@ import {
 } from './input.styles';
 
 const TaskInput = () => {
-  const { todos, setTodos } = useContext(TodoContext);
+  const { addTodoItem } = useContext(TodoContext);
   const [task, setTask] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,7 +19,9 @@ const TaskInput = () => {
     task.trim();
     if (task === '') return;
 
-    setTodos([...todos, { id: id, task: task, isDone: false }]);
+    addTodoItem({ id: id, task: task, isDone: false })
+
+    // setTodos([...todos, { id: id, task: task, isDone: false }]);
     setTask('');    
   };
 
