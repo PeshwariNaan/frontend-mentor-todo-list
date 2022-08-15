@@ -1,23 +1,37 @@
-import styled from "styled-components";
-import BgDarkDesktop from '../../assets/bg-desktop-dark.jpg'
-import BgDarkMobile from '../../assets/bg-mobile-dark.jpg'
-import BgLightDesktop from '../../assets/bg-desktop-light.jpg'
-import BgLightMobile from '../../assets/bg-mobile-light.jpg'
+import styled from 'styled-components';
 
 export const BackgroundContainer = styled.div`
-    display: flex;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    position: absolute;
-    background: ${props => props.isDark? `url(${BgDarkDesktop})`: `url(${BgLightDesktop})`} no-repeat;
-    background-size: 100vw;
-    background-color: ${props => props.isDark? 'black': 'white'};
-`
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  position: absolute;
+  background-size: 100vw;
+  background-color: ${(props) => (props.isDark ? 'black' : 'white')};
+`;
 
-// export const BackgroundImage = styled.img`
-//     width: 100vw;    
-//     height: 30rem;
-    
-// `
+export const BackgroundImageDark = styled.img`
+  display: ${(props) => (props.isDark ? null : 'none')};
+  width: 100vw;
+  height: 35rem;
+  min-width: 80rem;
+  @media (max-width: 800px) {
+    height: 15rem;  
+    min-width: 50rem;
+  }
+`;
+
+export const BackgroundImageLight = styled.img`
+  display: ${(props) => (props.isDark ? 'none' : null)};
+  width: 100vw;
+  height: 35rem;
+  min-width: 100rem;
+
+  @media (max-width: 800px) {
+    height: 15rem;   
+    min-width: 50rem; 
+  }
+`;
+
+

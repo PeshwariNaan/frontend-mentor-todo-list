@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { nanoid } from 'nanoid';
 import { TodoContext } from '../../contexts/todos.context';
+import { ThemeContext } from '../../contexts/theme.context';
 
 import {
   InputContainer,
@@ -11,6 +12,8 @@ import {
 
 const TaskInput = () => {
   const { addTodoItem } = useContext(TodoContext);
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
   const [task, setTask] = useState('');
 
   const handleSubmit = (e) => {
@@ -19,10 +22,10 @@ const TaskInput = () => {
     task.trim();
     if (task === '') return;
 
-    addTodoItem({ id: id, task: task, isDone: false })
+    addTodoItem({ id: id, task: task, isDone: false });
 
     // setTodos([...todos, { id: id, task: task, isDone: false }]);
-    setTask('');    
+    setTask('');
   };
 
   const clearInput = () => {
@@ -36,11 +39,12 @@ const TaskInput = () => {
   return (
     <form onSubmit={handleSubmit}>
       <InputContainer>
-        <CircleContainer>
+        <CircleContainer isDark={darkMode}>
           <ClearTextCircle onClick={clearInput}></ClearTextCircle>
         </CircleContainer>
 
         <StyledInput
+          isDark={darkMode}
           type="text"
           placeholder="Create a new todo..."
           onChange={handleChange}

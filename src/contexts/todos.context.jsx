@@ -88,7 +88,6 @@ export const ToDoProvider = ({ children }) => {
       }
       return todo;
     });
-    console.log(updatedTodoList);
     return updatedTodoList;
   };
 

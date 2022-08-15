@@ -5,7 +5,7 @@ import { ReactComponent as Moon } from '../../assets/icon-moon.svg';
 import { ReactComponent as Sun } from '../../assets/icon-sun.svg';
 import { actiontypes } from '../../contexts/theme.context';
 
-const Header = (props) => {
+const Header = () => {
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
   
