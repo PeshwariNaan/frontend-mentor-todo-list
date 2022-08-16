@@ -5,10 +5,14 @@ export const InputContainer = styled.div`
   flex-direction: row;
   width: 45rem;
   height: 5rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   justify-content: space-between;
   overflow: hidden;
-  
+
+  @media (max-width: 600px) {
+    width: 35rem;
+    height: 4.5rem;
+  }
 `;
 
 export const StyledInput = styled.input`
@@ -21,7 +25,10 @@ export const StyledInput = styled.input`
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
   border-style: none;
   padding-left: 2rem;
-  
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const CircleContainer = styled.div`
@@ -31,7 +38,6 @@ export const CircleContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
-
 `;
 
 export const ClearTextCircle = styled.div`
@@ -39,5 +45,4 @@ export const ClearTextCircle = styled.div`
   height: 2rem;
   border-radius: 100%;
   border: 2px solid #444;
-  //color: white;
 `;

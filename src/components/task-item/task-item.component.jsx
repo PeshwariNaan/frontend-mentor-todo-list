@@ -3,13 +3,15 @@ import { ReactComponent as Cross } from '../../assets/icon-cross.svg';
 import { ThemeContext } from '../../contexts/theme.context';
 import { TodoContext } from '../../contexts/todos.context';
 import { ReactComponent as Check } from '../../assets/icon-check.svg';
+import cross from '../../assets/icon-cross.svg'
 import {
   TaskContainer,
   CheckboxContainer,
   Circle,
   TaskText,
   DeleteContainer,
-  CheckContainer
+  CheckContainer,
+  CheckImage
 } from './task-item.styles';
 
 const TaskItem = ({ todo }) => {
@@ -28,10 +30,12 @@ const TaskItem = ({ todo }) => {
       </CheckboxContainer>
       <TaskText isDone={isDone} isDark={darkMode}>{task}</TaskText>
       <DeleteContainer>
-        <Cross onClick={() => deleteTodo(id)} />
+        <CheckImage src={cross} onClick={() => deleteTodo(id)} />
       </DeleteContainer>
     </TaskContainer>
   );
 };
 
 export default TaskItem;
+
+//<Cross onClick={() => deleteTodo(id)} />

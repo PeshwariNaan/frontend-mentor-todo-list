@@ -17,7 +17,7 @@ const TaskList = ({ todoList, filter }) => {
       setNotice('You have no active todos');
     }
     if (filter === 'Completed') {
-      setNotice('You have no completed todos! You better get back to work.');
+      setNotice('You have no completed todos!');
     }
   };
   useEffect(() => {
@@ -33,7 +33,9 @@ const TaskList = ({ todoList, filter }) => {
           return <TaskItem key={todo.id} todo={todo} id={todo.id} />;
         })}
     </ListContainer> ) : (
+      <NoticeContainer>
       <NoticeText isDark={darkMode}>{notice}</NoticeText>
+      </NoticeContainer>
     )}    
     </>
   );

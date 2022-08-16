@@ -11,6 +11,11 @@ export const TaskContainer = styled.div`
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
   border-bottom: 1px solid #444;
   justify-items: center;
+
+  @media (max-width: 600px) {
+    width: 35rem;
+    height: 4.5rem;
+  }
 `;
 
 export const TaskText = styled.p`
@@ -29,6 +34,9 @@ export const TaskText = styled.p`
       `
     }
   }}
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const CheckboxContainer = styled.div`
@@ -91,6 +99,16 @@ export const CheckContainer = styled.div`
   border-radius: 100%;
   align-items: center;
   justify-content: center;
+`
+
+export const CheckImage = styled.img`
+  width: 1.75rem;
+  height: 1.75rem;
+
+  @media (max-width: 600px) {
+    width: 1.25rem;
+  height: 1.25rem;
+  }
 `
 
 

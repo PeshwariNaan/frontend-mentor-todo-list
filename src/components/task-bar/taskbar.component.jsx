@@ -30,7 +30,7 @@ const TaskBar = ({ onFilterChange }) => {
       <RemainingItemsContainer>
         <Text isDark={darkMode}>{activeTodoNumber} items left</Text>
       </RemainingItemsContainer>
-      <FilterContainer>
+      <FilterContainer isDark={darkMode}>
         {filterCategories.map((filteredCategory) => (
           <Filter
             isDark={darkMode}

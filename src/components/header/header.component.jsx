@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../../contexts/theme.context';
-import { HeaderContainer, IconContainer, Title } from './header.styles';
+import { HeaderContainer, IconContainer, Title, IconImage } from './header.styles';
 import { ReactComponent as Moon } from '../../assets/icon-moon.svg';
 import { ReactComponent as Sun } from '../../assets/icon-sun.svg';
+import sun from '../../assets/icon-sun.svg'
+import moon from '../../assets/icon-moon.svg'
 import { actiontypes } from '../../contexts/theme.context';
 
 const Header = () => {
@@ -25,9 +27,9 @@ const Header = () => {
         <Title >todo</Title>
         <IconContainer >
           {darkMode ? (
-            <Sun onClick={toggleThemeHandler} />
+            <IconImage src={sun} onClick={toggleThemeHandler} />
           ) : (
-            <Moon onClick={toggleThemeHandler} />
+            <IconImage src={moon} onClick={toggleThemeHandler} />
           )}
         </IconContainer>
       </HeaderContainer>
@@ -35,3 +37,7 @@ const Header = () => {
   };
   
   export default Header;
+  // <Sun onClick={toggleThemeHandler} />
+  // ) : (
+  //   <Moon onClick={toggleThemeHandler} />
+  // )}

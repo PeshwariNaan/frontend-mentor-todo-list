@@ -16,8 +16,8 @@ export const BackgroundImageDark = styled.img`
   width: 100vw;
   height: 35rem;
   min-width: 80rem;
-  @media (max-width: 800px) {
-    height: 15rem;  
+  @media (max-width: 600px) {
+    height: 18rem;  
     min-width: 50rem;
   }
 `;
@@ -28,8 +28,8 @@ export const BackgroundImageLight = styled.img`
   height: 35rem;
   min-width: 100rem;
 
-  @media (max-width: 800px) {
-    height: 15rem;   
+  @media (max-width: 600px) {
+    height: 18rem;   
     min-width: 50rem; 
   }
 `;
