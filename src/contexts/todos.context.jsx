@@ -8,13 +8,14 @@ export const TODO_ACTION_TYPES = {
   DELETE_TODO: 'DELETE_TODO',
   TOGGLE_COMPLETED: 'TOGGLE_COMPLETED',
   CLEAR_COMPLETED: 'CLEAR_COMPLETED',
+  REORDER_TODOS: 'REORDER_TODOS',
 };
 
 //initial State
 const initialItems = [
-  { id: 44593, task: 'Go to the store', isDone: false },
-  { id: 44594, task: 'Do 300 pushups', isDone: true },
-  { id: 44595, task: 'Find a real job', isDone: false },
+  { id: '44593', task: 'Go to the store', isDone: false },
+  { id: '44594', task: 'Do 300 pushups', isDone: true },
+  { id: '44595', task: 'Find a real job', isDone: false },
 ];
 
 const initialState = {
@@ -43,6 +44,11 @@ const todoReducer = (state, action) => {
           ...state,
           todoItems: action.payload
         }
+      case TODO_ACTION_TYPES.REORDER_TODOS:
+        return{
+        ...state,
+        todoItems: action.payload
+      }
     default:
       return state;
   }
@@ -52,6 +58,7 @@ export const ToDoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(todoReducer, initialState);
 
   const value = {
+    
     todoItems: state.todoItems,
 
     //Action creators
@@ -76,6 +83,10 @@ export const ToDoProvider = ({ children }) => {
       const clearTodosList = clearCompleted();
       dispatch({ type: TODO_ACTION_TYPES.CLEAR_COMPLETED, payload: clearTodosList});
     },
+    reorderList: (newList) => {
+      //const reorderedList = handleOnDragEnd()
+      dispatch({type: TODO_ACTION_TYPES.REORDER_TODOS, payload: newList})
+    }
   };
 
   //**Helper functions**
@@ -103,6 +114,19 @@ export const ToDoProvider = ({ children }) => {
   const clearCompleted = () => {
     const updatedTodoList = state.todoItems.filter((todo) => !todo.isDone);
     return updatedTodoList;
+  };
+
+  const handleOnDragEnd = (result) => {
+    const { source, destination } = result;
+
+    if (!destination) return;
+
+    const newOrderTodos = [...todoItems];
+    const [draggedItem] = newOrderTodos.splice(source.index, 1);
+    newOrderTodos.splice(destination.index, 0, draggedItem);
+    console.log(newOrderTodos)
+    return newOrderTodos
+    
   };
 
   // const getTodos = () => {
