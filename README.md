@@ -35,10 +35,10 @@ Users should be able to:
 
 ### Screenshot
 
-![Desk-top view (dark)](./assets/ss_desktop.png)
-![Desk-top view (light)](./assets/ss_light_dt.png)
-![Mobile view ](./assets/ss_mobile_todo.png)
-
+![Desk-top view (dark)](./src/assets/ss_desktop.png)
+![Desk-top view (light)](./src/assets/ss_light_dt.png)
+![Mobile view ](./src/assets/ss_mobile_todo.png)
+C:\Users\PeshwariNaan\Desktop\Front-end-mentor\Super-Todo\vite-todo\src\assets\ss_light_dt.png
 
 ### Links
 
