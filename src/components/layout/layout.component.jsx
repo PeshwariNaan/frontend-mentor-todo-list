@@ -4,6 +4,7 @@ import Header from '../header/header.component';
 import TaskInput from '../input/input.component';
 import TaskList from '../task-list/task-list.component';
 import TaskBar from '../task-bar/taskbar.component';
+import Footer from '../footer/footer';
 import { TodoContext } from '../../contexts/todos.context';
 
 const Layout = () => {
@@ -29,6 +30,7 @@ const Layout = () => {
       <TaskInput />
       <TaskList todoList={todos} filter={filter} />
       <TaskBar onFilterChange={onFilterChangeHandler} filter={filter}/>
+      <Footer />
     </MainContainer>
   );
 };

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import check from '../../assets/icon-check.svg';
 
 export const TaskContainer = styled.div`
   display: flex;
@@ -25,7 +24,7 @@ export const TaskText = styled.p`
   height: 5rem;
   width: 100%;
   color: ${(props) => (props.isDark ? 'white' : 'black')};
-  font-family: 'Josefin Sans', sans-serif;
+  //font-family: 'Josefin Sans', sans-serif;
   font-size: 1.75rem;
   padding-left: 2rem;
 
