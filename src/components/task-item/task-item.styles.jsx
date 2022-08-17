@@ -11,6 +11,7 @@ export const TaskContainer = styled.div`
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
   border-bottom: 1px solid #444;
   justify-items: center;
+  
 
  
 
@@ -104,15 +105,17 @@ export const CheckContainer = styled.div`
 
 export const CheckImage = styled.img`
   display: none;
-  transition: all 0.5s ease-in-out;
+  transition: display 0.5s ease-in-out;
   width: 1.75rem;
   height: 1.75rem;
 
   ${TaskContainer}:hover & {
     display: block;
+    
   }
 
   @media (max-width: 600px) {
+    display: block;
     width: 1.25rem;
     height: 1.25rem;
   }

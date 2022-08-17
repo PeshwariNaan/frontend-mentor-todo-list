@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useReducer } from 'react';
+import { createContext, useEffect, useReducer } from 'react';
 
 export const TodoContext = createContext([]);
 
@@ -11,15 +11,9 @@ export const TODO_ACTION_TYPES = {
   REORDER_TODOS: 'REORDER_TODOS',
 };
 
-//initial State
-const initialItems = [
-  { id: '44593', task: 'Go to the store', isDone: false },
-  { id: '44594', task: 'Do 300 pushups', isDone: true },
-  { id: '44595', task: 'Find a real job', isDone: false },
-];
 
 const initialState = {
-  todoItems: initialItems,
+  todoItems: (JSON.parse(localStorage.getItem('todos')) || [])
 };
 
 const todoReducer = (state, action) => {
@@ -116,33 +110,10 @@ export const ToDoProvider = ({ children }) => {
     return updatedTodoList;
   };
 
-  const handleOnDragEnd = (result) => {
-    const { source, destination } = result;
 
-    if (!destination) return;
-
-    const newOrderTodos = [...todoItems];
-    const [draggedItem] = newOrderTodos.splice(source.index, 1);
-    newOrderTodos.splice(destination.index, 0, draggedItem);
-    console.log(newOrderTodos)
-    return newOrderTodos
-    
-  };
-
-  // const getTodos = () => {
-  //     let todoItems = []
-  //     if(localStorage.getItem('todos')) {
-  //         todoItems = JSON.parse(localStorage.getItem('todos'))
-  //     }
-  //     return todoItems
-  // }
-
-  // const [todos, setTodos] = useState(getTodos())
-
-  // useEffect(() => {
-  //     localStorage.setItem('todos', JSON.stringify(todos))
-  //     console.log(todos)
-  // }, [todos])
+  useEffect(() => {
+      localStorage.setItem('todos', JSON.stringify(state.todoItems))
+  }, [state.todoItems])
 
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };
