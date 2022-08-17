@@ -35,9 +35,7 @@ const TaskList = ({ todoList, filter }) => {
     const newOrderTodos = [...todoItems];
     const [draggedItem] = newOrderTodos.splice(source.index, 1);
     newOrderTodos.splice(destination.index, 0, draggedItem);
-    console.log(newOrderTodos)
-    reorderList(newOrderTodos)
-    
+    reorderList(newOrderTodos)    
   };
 
   return (
