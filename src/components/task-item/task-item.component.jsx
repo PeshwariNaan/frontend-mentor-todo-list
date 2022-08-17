@@ -44,7 +44,7 @@ const TaskItem = ({ todo, index }) => {
             {task}
           </TaskText>
           <DeleteContainer>
-            <CheckImage src={cross} onClick={() => deleteTodo(id)} />
+            <CheckImage src={cross} onClick={() => deleteTodo(id)} alt='X for delete' />
           </DeleteContainer>
         </TaskContainer>
       )}

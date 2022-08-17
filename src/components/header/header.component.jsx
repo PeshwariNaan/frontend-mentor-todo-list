@@ -25,9 +25,9 @@ const Header = () => {
         <Title >todo</Title>
         <IconContainer >
           {darkMode ? (
-            <IconImage src={sun} onClick={toggleThemeHandler} />
+            <IconImage src={sun} onClick={toggleThemeHandler} alt='sun icon' />
           ) : (
-            <IconImage src={moon} onClick={toggleThemeHandler} />
+            <IconImage src={moon} onClick={toggleThemeHandler} alt='moon icon'/>
           )}
         </IconContainer>
       </HeaderContainer>
