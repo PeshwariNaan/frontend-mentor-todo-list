@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import check  from '../../assets/icon-check.svg'
+import check from '../../assets/icon-check.svg';
 
 export const TaskContainer = styled.div`
   display: flex;
@@ -11,6 +11,8 @@ export const TaskContainer = styled.div`
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
   border-bottom: 1px solid #444;
   justify-items: center;
+
+ 
 
   @media (max-width: 600px) {
     width: 35rem;
@@ -26,12 +28,12 @@ export const TaskText = styled.p`
   font-size: 1.75rem;
   padding-left: 2rem;
 
-  ${props => {
-    if(props.isDone) {
+  ${(props) => {
+    if (props.isDone) {
       return `
       color: #777;
       text-decoration: line-through;
-      `
+      `;
     }
   }}
   @media (max-width: 600px) {
@@ -64,7 +66,6 @@ export const Circle = styled.div`
   background-image: ${(props) =>
     props.isDone ? 'linear-gradient(to top left, #cf1af4, #40dff1 )' : null};
 
-
   &:hover {
     ${(props) => {
       if ((props.isDone && props.isDark) || (!props.isDark && props.isDone)) {
@@ -92,23 +93,27 @@ export const Circle = styled.div`
 `;
 
 export const CheckContainer = styled.div`
-  display: ${props => props.isDone? 'flex' : 'none'};
+  display: ${(props) => (props.isDone ? 'flex' : 'none')};
   position: absolute;
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   align-items: center;
   justify-content: center;
-`
+`;
 
 export const CheckImage = styled.img`
+  display: none;
+  transition: all 0.5s ease-in-out;
   width: 1.75rem;
   height: 1.75rem;
 
+  ${TaskContainer}:hover & {
+    display: block;
+  }
+
   @media (max-width: 600px) {
     width: 1.25rem;
-  height: 1.25rem;
+    height: 1.25rem;
   }
-`
-
-
+`;
