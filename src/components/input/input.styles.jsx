@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 45rem;
-  height: 5rem;
+  width: 63rem;
+  height: 7rem;
   border-radius: 0.5rem;
   justify-content: space-between;
   overflow: hidden;
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     width: 35rem;
     height: 4.5rem;
   }
@@ -26,7 +26,7 @@ export const StyledInput = styled.input`
   border-style: none;
   padding-left: 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     font-size: 1.5rem;
   }
 `;

@@ -14,10 +14,10 @@ export const BackgroundContainer = styled.div`
 export const BackgroundImageDark = styled.img`
   display: ${(props) => (props.isDark ? null : 'none')};
   width: 100vw;
-  height: 35rem;
+  height: 32rem;
   min-width: 80rem;
-  @media (max-width: 600px) {
-    height: 18rem;  
+  @media (max-width: 650px) {
+    height: 19rem;  
     min-width: 50rem;
   }
 `;
@@ -25,11 +25,11 @@ export const BackgroundImageDark = styled.img`
 export const BackgroundImageLight = styled.img`
   display: ${(props) => (props.isDark ? 'none' : null)};
   width: 100vw;
-  height: 35rem;
+  height: 32rem;
   min-width: 100rem;
 
-  @media (max-width: 600px) {
-    height: 18rem;   
+  @media (max-width: 650px) {
+    height: 19rem;   
     min-width: 50rem; 
   }
 `;

@@ -3,29 +3,25 @@ import styled from 'styled-components';
 export const TaskContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 45rem;
-  height: 5rem;
+  width: 63rem;
+  height: 6rem;
   justify-content: space-between;
   overflow: hidden;
   background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
   border-bottom: 1px solid #444;
   justify-items: center;
-  
 
- 
-
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     width: 35rem;
-    height: 4.5rem;
+    height: 5rem;
   }
 `;
 
 export const TaskText = styled.p`
-  height: 5rem;
+  //height: 5rem;
   width: 100%;
-  color: ${(props) => (props.isDark ? 'white' : 'black')};
-  //font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.75rem;
+  color: ${(props) => (props.isDark ? '#DCDCDC' : 'black')};
+  font-size: 2rem;
   padding-left: 2rem;
 
   ${(props) => {
@@ -36,7 +32,7 @@ export const TaskText = styled.p`
       `;
     }
   }}
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     font-size: 1.5rem;
   }
 `;
@@ -100,6 +96,7 @@ export const CheckContainer = styled.div`
   border-radius: 100%;
   align-items: center;
   justify-content: center;
+  cursor: default;
 `;
 
 export const CheckImage = styled.img`
@@ -113,7 +110,7 @@ export const CheckImage = styled.img`
     
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     display: block;
     width: 1.25rem;
     height: 1.25rem;

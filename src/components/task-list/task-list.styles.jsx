@@ -7,7 +7,7 @@ export const ListContainer = styled.div`
   margin-top: 2rem;
   border-radius: 0.5rem 0.5rem 0 0;
   overflow: hidden;
-  box-shadow: ${props => props.isDark ? null : '0 1rem 1rem 0.5rem #777'};
+  box-shadow: ${props => props.isDark ? null : '0 5rem 1rem 0.5rem #D3D3D3'};
 `;
 
 export const NoticeText = styled.h2`
