@@ -22,7 +22,7 @@ export const StyledInput = styled.input`
   color: ${(props) => (props.isDark ? '#fff' : '#333')};
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.75rem;
-  background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+  background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
   border-style: none;
   padding-left: 2rem;
 
@@ -37,7 +37,7 @@ export const CircleContainer = styled.div`
   width: 8rem;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+  background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
 `;
 
 export const ClearTextCircle = styled.div`

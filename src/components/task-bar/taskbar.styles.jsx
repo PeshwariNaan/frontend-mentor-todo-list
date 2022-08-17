@@ -7,7 +7,7 @@ export const TaskBarContainer = styled.div`
   height: 6rem;
   align-items: center;
   border-radius: 0 0 0.5rem 0.5rem;
-  background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+  background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
   box-shadow: ${(props) =>
     props.isDark
       ? null
@@ -45,7 +45,7 @@ export const FilterContainer = styled.div`
   @media (max-width: 650px) {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+    background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
     height: 4rem;    
     border-radius: 0.5rem;
     box-shadow: ${(props) =>
@@ -78,7 +78,7 @@ export const Filter = styled.button`
   width: max-content;
   border: none;
   color: ${(props) => (props.isDark ? '#666' : '#555')};
-  background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+  background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
   cursor: pointer;
   ${({ active }) =>
     active &&

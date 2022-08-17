@@ -7,7 +7,7 @@ export const TaskContainer = styled.div`
   height: 6rem;
   justify-content: space-between;
   overflow: hidden;
-  background-color: ${(props) => (props.isDark ? '#333' : '#fff')};
+  background-color: ${(props) => (props.isDark ? 'hsl(235, 24%, 19%)' : '#fff')};
   border-bottom: 1px solid #444;
   justify-items: center;
 
@@ -18,7 +18,6 @@ export const TaskContainer = styled.div`
 `;
 
 export const TaskText = styled.p`
-  //height: 5rem;
   width: 100%;
   color: ${(props) => (props.isDark ? '#DCDCDC' : 'black')};
   font-size: 2rem;
