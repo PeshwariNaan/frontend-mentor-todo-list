@@ -78,7 +78,6 @@ export const ToDoProvider = ({ children }) => {
       dispatch({ type: TODO_ACTION_TYPES.CLEAR_COMPLETED, payload: clearTodosList});
     },
     reorderList: (newList) => {
-      //const reorderedList = handleOnDragEnd()
       dispatch({type: TODO_ACTION_TYPES.REORDER_TODOS, payload: newList})
     }
   };

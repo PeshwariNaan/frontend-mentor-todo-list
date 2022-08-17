@@ -23,8 +23,6 @@ const TaskInput = () => {
     if (task === '') return;
 
     addTodoItem({ id: id, task: task, isDone: false });
-
-    // setTodos([...todos, { id: id, task: task, isDone: false }]);
     setTask('');
   };
 

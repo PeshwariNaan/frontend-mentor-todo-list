@@ -11,7 +11,7 @@ export const actiontypes = {
 
 const initialState = { darkMode: true };
 
-// Simple reducer for change toggling dark mode
+// Simple reducer for toggling dark mode
 const themeReducer = (state, action) => {
   switch (action.type) {
     case actiontypes.LIGHTMODE:

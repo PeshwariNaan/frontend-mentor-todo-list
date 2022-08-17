@@ -37,7 +37,4 @@ const Header = () => {
   };
   
   export default Header;
-  // <Sun onClick={toggleThemeHandler} />
-  // ) : (
-  //   <Moon onClick={toggleThemeHandler} />
-  // )}
+ 
