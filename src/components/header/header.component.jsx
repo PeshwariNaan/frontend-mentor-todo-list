@@ -22,7 +22,7 @@ const Header = () => {
   
     return (
       <HeaderContainer>
-        <Title >todo</Title>
+        <Title>todo</Title>
         <IconContainer >
           {darkMode ? (
             <IconImage src={sun} onClick={toggleThemeHandler} alt='sun icon' />

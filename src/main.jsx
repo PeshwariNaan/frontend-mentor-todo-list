@@ -7,10 +7,10 @@ import { ToDoProvider } from './contexts/todos.context';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    <ThemeProvider>
-      <ToDoProvider>
-        <App />
-      </ToDoProvider>
-    </ThemeProvider>
+  <ThemeProvider>
+    <ToDoProvider>
+      <App />
+    </ToDoProvider>
+  </ThemeProvider>
   // </React.StrictMode>
 );

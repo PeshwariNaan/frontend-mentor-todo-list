@@ -38,11 +38,11 @@ Users should be able to:
 ![Desk-top view (dark)](./src/assets/ss_desktop.png)
 ![Desk-top view (light)](./src/assets/ss_light_dt.png)
 ![Mobile view ](./src/assets/ss_mobile_todo.png)
-C:\Users\PeshwariNaan\Desktop\Front-end-mentor\Super-Todo\vite-todo\src\assets\ss_light_dt.png
+
 
 ### Links
 
-- Solution URL: [Github repo](https://github.com/PeshwariNaan/frontend-mentor-todo-list)
+- Solution URL: [Github repo](https://github.com/PeshwariNaan/countries-a-plenty.git)
 - Live Site URL: [Live link](https://peshwarinaan.github.io/frontend-mentor-todo-list/)
 
 ## My process

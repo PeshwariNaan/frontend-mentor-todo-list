@@ -1,14 +1,24 @@
-import { Fragment, useState } from 'react';
+import { useContext } from 'react';
 import Background from './components/background/background.component';
 import Layout from './components/layout/layout.component';
-import Header from './components/header/header.component';
+import { ThemeContext } from './contexts/theme.context';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${(props) => (props.darkmode ? 'black' : 'white')};
+  }
+`;
 
 function App() {
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   return (
     <>
-    <Layout />
-    <Background />
-      
+      <GlobalStyle darkmode={darkMode} />
+      <Layout />
+      <Background />
     </>
   );
 }

@@ -10,8 +10,8 @@ const Background = () => {
 
   return (
     <BackgroundContainer isDark={darkMode}>
-      <BackgroundImageDark isDark={darkMode} src={BgDarkDesktop} alt="building picture"/>
-      <BackgroundImageLight isDark={darkMode} src={BgLightDesktop} alt="mountains" />
+      <BackgroundImageDark isDark={darkMode} src={BgDarkDesktop} alt='building picture'/>
+      <BackgroundImageLight isDark={darkMode} src={BgLightDesktop} alt='mountains' />
     </BackgroundContainer>
   );
 };
